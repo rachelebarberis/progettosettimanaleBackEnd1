@@ -3,7 +3,14 @@
 Contribuente contribuente = new Contribuente();
 
 Console.WriteLine("Inserisci il tuo nome: ");
-contribuente.Nome = Console.ReadLine();
+string nome = Console.ReadLine();
+while (string.IsNullOrWhiteSpace(nome) || nome.Length <= 2)
+{
+    Console.WriteLine("Il nome deve avere più di due caratteri. Inserisci di nuovo il tuo nome: ");
+    nome = Console.ReadLine();
+}
+contribuente.Nome = nome;
+
 
 Console.WriteLine("Inserisci il tuo cognome: ");
 contribuente.Cognome = Console.ReadLine();
